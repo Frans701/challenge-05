@@ -31,19 +31,28 @@ function App() {
       <div>
         <Carousel
           autoFocus={true}
-          autoPlay={false}
+          autoPlay={true}
           infiniteLoop={true}
           showStatus={false}
-          interval={2000}
+          interval={3000}
           showArrows={true}
         >
           {movies.slice(0, 3).map((movie) => {
             return <Hero key={movie.id} movie={movie} />;
           })}
         </Carousel>
-        {movies.map((movie) => {
-          return <Movie key={movie.id} movie={movie} />;
-        })}
+        <div className="container mx-auto">
+          <h1 className="text-4xl font-bold">Popular Movie</h1>
+          <div className="grid grid-cols-4 gap-10 rounded-sm my-6">
+            {movies.map((movie) => {
+              return (
+                <div>
+                  <Movie key={movie.id} movie={movie} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );
