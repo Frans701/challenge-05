@@ -3,6 +3,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "boxicons";
+import { Outlet, Link } from "react-router-dom";
 import Movie from "./components/Movie";
 import Hero from "./components/Hero";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="font-poppins">
       <div>
+        {/* Carousel Start */}
         <Carousel
           autoFocus={true}
           autoPlay={true}
@@ -41,17 +43,25 @@ function App() {
             return <Hero key={movie.id} movie={movie} />;
           })}
         </Carousel>
+        {/* Carousal End */}
+
         <div className="container mx-auto">
           <h1 className="text-4xl font-bold">Popular Movie</h1>
+
+          {/* Popular Movie Start */}
           <div className="grid grid-cols-4 gap-10 rounded-sm my-6">
-            {movies.map((movie) => {
+            {movies.map((movie, index) => {
               return (
                 <div>
-                  <Movie key={movie.id} movie={movie} />
+                  <Link to={`/detail/${movie.id}`}>
+                    <Movie key={movie.id} movie={movie} />
+                  </Link>
                 </div>
               );
             })}
           </div>
+          {/* Popular Movie End */}
+          <Outlet />
         </div>
       </div>
     </div>

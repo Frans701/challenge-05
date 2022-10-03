@@ -23,6 +23,8 @@ function Hero({ movie }) {
             alt={movie.path}
           />
         </div>
+        {/* Black background */}
+        <div className="absolute w-full h-screen bg-black bg-opacity-50"></div>
       </div>
     </>
   );
