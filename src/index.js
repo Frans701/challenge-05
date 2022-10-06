@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import Detail from "./routes/Detail";
 import Navbar from "./components/Navbar";
+import SearchPage from "./components/SearchPage";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,6 +15,7 @@ root.render(
       <Route path="/" element={<Navbar />}>
         <Route path="/" element={<App />} />
         <Route path="detail/:detailId" element={<Detail />} />
+        <Route path="searchPage" element={<SearchPage />} />
         <Route
           path="*"
           element={

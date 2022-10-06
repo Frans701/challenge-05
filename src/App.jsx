@@ -1,5 +1,4 @@
 import logo from "./logo.svg";
-import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "boxicons";
@@ -61,7 +60,6 @@ function App() {
             })}
           </div>
           {/* Popular Movie End */}
-          <Outlet />
         </div>
       </div>
     </div>
