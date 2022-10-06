@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -20,18 +21,7 @@ function Detail() {
     getDetail();
   }, []);
 
-  let name = [];
-  let names = ["aku", "betas"];
-  console.log(name);
-  console.log(names);
-  genres.map((genre) => {
-    name.push(genre.name);
-    return (
-      <div>
-        <span>{name}</span>
-      </div>
-    );
-  });
+  console.log(data);
 
   return (
     <>
@@ -40,15 +30,16 @@ function Detail() {
         <div className="container mx-auto">
           <div className="absolute z-[1] text-white text-left w-[700px] mt-[250px]">
             <h1 className="text-6xl font-bold">{detail.title}</h1>
-            {genres.map((genre) => {
-              let name = [genre.name];
-              console.log(name);
-              return (
-                <div>
-                  <span>{name}</span>
-                </div>
-              );
-            })}
+            <div className="mt-6 ml-6">
+              {genres.map((genre) => {
+                let name = genre.name;
+                return (
+                  <ul className="space-y-1 list-disc">
+                    <li>{name}</li>
+                  </ul>
+                );
+              })}
+            </div>
             <p className="mt-6 text-sm">{detail.overview}</p>
             <button class="bg-red-500 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-full uppercase mt-6 flex items-center">
               <box-icon color="white" name="play-circle"></box-icon>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useSearchParams, Link } from "react-router-dom";
-import Movie from "./Movie";
+import Movie from "../components/Movie";
 
 function SearchPage() {
   let [searchParams, setSearchParams] = useSearchParams();
@@ -21,9 +21,11 @@ function SearchPage() {
   }, [getMovie]);
 
   return (
-    <div>
-      {" "}
-      <div className="grid grid-cols-4 gap-10 rounded-sm my-6">
+    <div className="mt-[80px] container mx-auto">
+      <h1 className="text-4xl text-gray-800 font-bold">
+        Search Result "{getMovie}"
+      </h1>
+      <div className="grid grid-cols-4 gap-10 rounded-sm my-6 ">
         {searchMovieList.map((movie, index) => {
           return (
             <div>
