@@ -30,7 +30,7 @@ function Navbar() {
                     setSearch(event.target.value);
                   }}
                   type="input"
-                  className="bg-transparent block p-2 pl-10 w-full text-sm text-gray-900 border-solid border border-red-600 rounded-full"
+                  className="bg-transparent block p-2 pl-10 w-full text-sm text-white border-solid border border-red-600 rounded-full"
                   placeholder="What do you want to watch?"
                   required
                 />
