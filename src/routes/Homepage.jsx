@@ -29,22 +29,24 @@ function Homepage() {
     <div className="font-poppins">
       <div>
         {/* Carousel Start */}
-        <Carousel
-          autoFocus={true}
-          autoPlay={true}
-          infiniteLoop={true}
-          showStatus={false}
-          interval={3000}
-          showArrows={true}
-        >
-          {movies.slice(0, 3).map((movie) => {
-            return <Hero key={movie.id} movie={movie} />;
-          })}
-        </Carousel>
+        <div className="h-screen">
+          <Carousel
+            autoFocus={true}
+            autoPlay={true}
+            infiniteLoop={true}
+            showStatus={false}
+            interval={3000}
+            showArrows={true}
+          >
+            {movies.slice(0, 3).map((movie) => {
+              return <Hero key={movie.id} movie={movie} />;
+            })}
+          </Carousel>
+        </div>
         {/* Carousal End */}
 
         {/* Popular Movie Start */}
-        <div className="container mx-auto">
+        <div className="container mx-auto mt-6">
           <h1 className="text-4xl font-bold">Popular Movie</h1>
 
           <div className="grid grid-cols-4 gap-10 rounded-sm my-6">

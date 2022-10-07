@@ -25,18 +25,18 @@ function Detail() {
 
   return (
     <>
-      <div className="relative z-[1] h-[700px] w-full">
+      <div className="relative z-[1] h-screen w-full">
         {/* Text */}
         <div className="container mx-auto">
           <div className="absolute z-[1] text-white text-left w-[700px] mt-[180px]">
             <h1 className="text-6xl font-bold">{detail.title}</h1>
-            <div className="mt-6 ml-6">
+            <div className="mt-8">
               {genres.map((genre) => {
                 let name = genre.name;
                 return (
-                  <ul className="space-y-1 list-disc">
-                    <li>{name}</li>
-                  </ul>
+                  <button class="bg-red-600 text-white font-normal px-4 py-2 rounded-lg mr-2">
+                    {name}
+                  </button>
                 );
               })}
             </div>
